@@ -113,7 +113,7 @@ while True:
                         plate_height, plate_width = empty_plate.shape[:2]
                         last_frame_with_vehicle[0:plate_height, 0:plate_width] = empty_plate
                         cv2.imwrite(
-                            f'/home/user/PycharmProjects/nplate_rec/beamsearch/screen{n}_{final_plate}.jpg',
+                            f'./screens/screen{n}_{final_plate}.jpg',
                             last_frame_with_vehicle)
                         n += 1
                         number_plates.append(final_plate)
@@ -126,7 +126,7 @@ while True:
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-file_name = '/home/user/PycharmProjects/nplate_rec/beamsearch/number_plates.txt'
+file_name = './reports/number_plates.txt'
 with open(file_name, 'w') as file:
     for item in number_plates:
         file.write(item + '\n')
